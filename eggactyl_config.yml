@@ -1,0 +1,3 @@
+software:
+  type: discord_nodejs
+  node_version: "20"
