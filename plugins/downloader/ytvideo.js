@@ -13,7 +13,7 @@ exports.run = {
     mecha.ytvideo = mecha.ytvideo ? mecha.ytvideo : {};
     if (m.text in mecha.ytvideo) return m.reply("Harap tunggu, masih ada tugas yang belum terselesaikan.");
     mecha.ytvideo[m.text] = true;
-    mecha.sendReact(m.chat, '', m.key);
+    mecha.sendReact(m.chat, '🕒', m.key);
 
     try {
       let data = await ytmp3(m.text);
@@ -36,7 +36,7 @@ exports.run = {
         quoted: m,
         ephemeralExpiration: m.expiration
       });
-      mecha.sendMessage(m.chat, { react: { text: ``, key: m.key } });
+      mecha.sendMessage(m.chat, { react: { text: `☑️`, key: m.key } });
     } catch (err) {
       mecha.reply(m.chat, "Error ytvideo: " + err, m);
     } finally {
