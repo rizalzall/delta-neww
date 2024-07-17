@@ -17,13 +17,13 @@ exports.run = {
 
     try {
       let data = await ytmp3(m.text);
-      let txt = ` *YOUTUBE DOWNLOADER MP3*\n`;
-      txt += `\n *Title:* ${data.title}`;
-      txt += `\n *Size:* ${data.size}`;
-      txt += `\n *Duration:* ${data.duration}`;
-      txt += `\n *Views:* ${data.views}${data.likes ? '\n *Likes:* ' + data.likes : ''}${data.dislike ? '\n *Dislike:* ' + data.dislike : ''}`;
-      txt += `\n *Channel:* ${data.channel}`;
-      txt += `\n *Upload Date:* ${data.uploadDate}`;
+      let txt = `🎶 *YOUTUBE DOWNLOADER MP3*\n`;
+      txt += `\n🎵 *Title:* ${data.title}`;
+      txt += `\n📦 *Size:* ${data.size}`;
+      txt += `\n⏳ *Duration:* ${data.duration}`;
+      txt += `\n👁️ *Views:* ${data.views}${data.likes ? '\n👍 *Likes:* ' + data.likes : ''}${data.dislike ? '\n👎 *Dislike:* ' + data.dislike : ''}`;
+      txt += `\n📺 *Channel:* ${data.channel}`;
+      txt += `\n📅 *Upload Date:* ${data.uploadDate}`;
 
       let music = await fg.ytv(m.text);
       if (!music.dl_url) return m.reply(mess.error.api);
