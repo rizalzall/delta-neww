@@ -50,7 +50,7 @@ exports.run = {
         try {
           let res = await func.fetchJson(`https://itzpire.com/download/spotify?url=${m.args[0]}`);
           if (res.data.title && res.data.download) {
-            let caption = `*Title* : ${res.data.title}\n*Artist* : ${res.data.artist}\n*Type* : ${res.data.type}\n*Duration* : ${res.data.duration}\n\n© Delta-BOT`;
+            let caption = `*Title* : ${res.data.title}\n*Artist* : ${res.data.artist}\n*Type* : ${res.data.type}\n*Duration* : ${res.data.duration}\n\n> © Delta-BOT`;
             await mecha.sendMessageModify(m.chat, caption, m, {
               title: 'SPOTIFY PLAY',
               body: global.header,
