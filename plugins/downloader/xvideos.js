@@ -48,12 +48,11 @@ mecha.sendReact(m.chat, '🕒', m.key)
 try {
 let res = await fg.xvideosdl(m.args[0]);
 if (res.title && res.url_dl) {
-let caption = `*Title:* ${res.title}\n*Views:* ${res.views}\n*Votes:* ${res.vote}\n*Likes:* ${res.likes}\n*Dislikes:* ${res.deslikes}\n*Size:* ${res.size}\n\n© Delta-BOT`;
+let caption = `*Title:* ${res.title}\n*Views:* ${res.views}\n*Votes:* ${res.vote}\n*Likes:* ${res.likes}\n*Dislikes:* ${res.deslikes}\n*Size:* ${res.size}\n\n> © Delta-BOT`;
 await mecha.sendMessage(m.chat, {
-document: {
+video: {
 url: res.url_dl
 },
-fileName: `${res.title}`,
 mimetype: 'video/mp4',
 caption
 }, {quoted: m, ephemeralExpiration: m.expiration})
