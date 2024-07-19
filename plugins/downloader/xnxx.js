@@ -48,12 +48,11 @@ m.reply(global.mess.wait)
 try {
 let res = await fg.xnxxdl(m.args[0]);
 if (res.title && res.url_dl) {
-let caption = `*Title:* ${res.title}\n*Duration:* ${res.duration}\n*Quality:* ${res.quality}\n*Size:* ${res.size}\n\n© Delta-BOT`;
+let caption = `*Title:* ${res.title}\n*Duration:* ${res.duration}\n*Quality:* ${res.quality}\n*Size:* ${res.size}\n\n> © Delta-BOT`;
 await mecha.sendMessage(m.chat, {
-document: {
+video: {
 url: res.url_dl
 },
-fileName: `${res.title}`,
 mimetype: 'video/mp4',
 caption
 }, {quoted: m, ephemeralExpiration: m.expiration})
