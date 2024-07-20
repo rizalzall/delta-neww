@@ -15,49 +15,48 @@ exports.run = {
       try {
       let res = await func.fetchJson('https://skizo.tech/api/tiktok?apikey=zallzall&url=' + m.text)
       if (res.code !== 0) return m.reply(mess.error.api)
-      let body = 'Result from:' + ' `' + m.text + '`'
+      let body = '```Result from:```' + ' `' + m.text + '`'
       let sections = [];
       sections.push({
         title: res.data.title,
-       rows: [
+        rows: [
               {
                 title: '🔊 Audio',
-                id: ${m.prefix}tiktokmp3 ${m.text},
-                description: 🎵 Duration: ${res.data.music_info.duration}s
+                id: `${m.prefix}tiktokmp3 ${m.text}`,
+                description: `🎵 Duration: ${res.data.music_info.duration}s`
               },
               {
                 title: '📹 Video No Watermark',
-                id: ${m.prefix}tiktokdl ${m.text},
-                description: ⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.size}
+                id: `${m.prefix}tiktokdl ${m.text}`,
+                description: `⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.size}`
               },
               {
                 title: '💧 Video With Watermark',
-                id: ${m.prefix}tiktokwm ${m.text},
-                description: ⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.wm_size}
+                id: `${m.prefix}tiktokwm ${m.text}`,
+                description: `⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.wm_size}`
               },
               {
                 title: '🖼️ HD Quality',
-                id: ${m.prefix}tiktokhd ${m.text},
-                description: ⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.hd_size}
+                id: `${m.prefix}tiktokhd ${m.text}`,
+                description: `⏳ Duration: ${res.data.duration}s\n📦 Size: ${res.data.hd_size}`
               },
               {
                 title: '📽️ Slide',
-                id: ${m.prefix}tiktokslide ${m.text}
+                id: `${m.prefix}tiktokslide ${m.text}`
               }
             ]
           });
-
-          let buttons = [
-            ['list', 'Select Download Option', sections],
-            ['url', 'Open TikTok', m.text],
-          ];
-      mecha.sendButton(m.chat, T I K T O K - D O W N L O A D E R, Result From : ${m.text}\n\nSelect the list button below., global.footer, buttons, m, {
+      let buttons = [
+        ['list', 'Click Here ⎙', sections],
+        ['url', 'TikTok', m.text],
+      ]
+      mecha.sendButton(m.chat, `T I K T O K - D O W N L O A D E R`, `Result From : ${m.text}\n\nSelect the list button below.`, global.footer, buttons, m, {
         userJid: m.sender,
         expiration: m.expiration
       })
 } catch (err) {
       console.error(err);
-      m.reply(Terjadj kesalahan ${err});
+      m.reply(`Terjadj kesalahan ${err}`);
       }
     }
     break
@@ -80,7 +79,7 @@ if (!m.text) return m.reply(func.example(m.cmd, 'https://vt.tiktok.com'));
               music_info,
               author
             } = res.data;
-            let caption = *ID:* ${id}\n*Judul:* ${title}\n*Play:* ${play_count}\n*Digg:* ${digg_count}\n*Komentar:* ${comment_count}\n*Share:* ${share_count}\n*Download:* ${download_count}\n*Collect:* ${collect_count}\n\n*Musik:* ${music_info.title} - ${music_info.author}\n\n *Author:* ${author.nickname};
+            let caption = `*ID:* ${id}\n*Judul:* ${title}\n*Play:* ${play_count}\n*Digg:* ${digg_count}\n*Komentar:* ${comment_count}\n*Share:* ${share_count}\n*Download:* ${download_count}\n*Collect:* ${collect_count}\n\n*Musik:* ${music_info.title} - ${music_info.author}\n\n *Author:* ${author.nickname}`;
             await mecha.sendMessage(m.chat, {
               video: {
                 url: res.data.play
@@ -89,7 +88,7 @@ if (!m.text) return m.reply(func.example(m.cmd, 'https://vt.tiktok.com'));
             }, { quoted: m, ephemeralExpiration: m.expiration })
 } catch (err) {
       console.error(err);
-      m.reply(Terjadj kesalahan ${err});
+      m.reply(`Terjadj kesalahan ${err}`);
     }
   }
 break
@@ -108,7 +107,7 @@ if (!m.text) return m.reply(func.example(m.cmd, 'https://vt.tiktok.com'));
             }, { quoted: m, ephemeralExpiration: m.expiration })
 } catch (err) {
       console.error(err);
-      m.reply(Terjadi kesalahan ${err});
+      m.reply(`Terjadi kesalahan ${err}`);
     }
   }
 break
@@ -137,14 +136,14 @@ if (!res.code === 0) return m.reply(mess.error.api)
 await mecha.sendMessage(m.chat, {video: {url: hdplay}, mimetype: 'video/mp4'}, {quoted: m, ephemeralExpiration: m.expiration})
 } catch (err) {
       console.error(err);
-      m.reply(Terjadi kesalahan ${err});
+      m.reply(`Terjadi kesalahan ${err}`);
     }
   }
 break
 case 'tiktokslide':{
     if (!m.text) return m.reply(func.example(m.cmd, 'https://www.tiktok.com/'));
     
-    await m.reply('Processing...');
+    await m.reply('*Processing...*');
 
     async function createImage(url) {
       const { imageMessage } = await generateWAMessageContent({
@@ -157,7 +156,7 @@ case 'tiktokslide':{
 
     let push = [];
     try {
-      let { data } = await axios.get(https://api.betabotz.eu.org/api/download/ttslide?url=${encodeURIComponent(m.text)}&apikey=UZUgfL7u);
+      let { data } = await axios.get(`https://api.betabotz.eu.org/api/download/ttslide?url=${encodeURIComponent(m.text)}&apikey=UZUgfL7u`);
       if (data.status && data.result && data.result.images.length > 0) {
         let images = data.result.images;
         let i = 1;
@@ -165,7 +164,7 @@ case 'tiktokslide':{
         for (let img of images) {
           push.push({
             body: proto.Message.InteractiveMessage.Body.fromObject({
-              text: Slide ke - ${i++}
+              text: `Slide ke - ${i++}`
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '乂 T I K - T O K - S L I D E'
@@ -195,7 +194,7 @@ case 'tiktokslide':{
             message: {
               interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                 body: proto.Message.InteractiveMessage.Body.create({
-                  text: Hasil Download: ${data.result.title}
+                  text: `Hasil Download: ${data.result.title}`
                 }),
                 footer: proto.Message.InteractiveMessage.Footer.create({
                   text: '乂 T I K - T O K - S L I D E'
@@ -223,7 +222,7 @@ case 'tiktokslide':{
       }
     } catch (e) {
       console.error(e);
-      m.reply(Maaf terjadi kesalahan! ${e});
+      m.reply(`Maaf terjadi kesalahan! ${e}`);
     }
   }
 break
@@ -246,7 +245,7 @@ case 'tiktokwm':{
               music_info,
               author
             } = res.data;
-            let caption = *ID:* ${id}\n*Judul:* ${title}\n*Play:* ${play_count}\n*Digg:* ${digg_count}\n*Komentar:* ${comment_count}\n*Share:* ${share_count}\n*Download:* ${download_count}\n*Collect:* ${collect_count}\n\n*Musik:* ${music_info.title} - ${music_info.author}\n\n *Author:* ${author.nickname};
+            let caption = `*ID:* ${id}\n*Judul:* ${title}\n*Play:* ${play_count}\n*Digg:* ${digg_count}\n*Komentar:* ${comment_count}\n*Share:* ${share_count}\n*Download:* ${download_count}\n*Collect:* ${collect_count}\n\n*Musik:* ${music_info.title} - ${music_info.author}\n\n *Author:* ${author.nickname}`;
             await mecha.sendMessage(m.chat, {
               video: {
                 url: res.data.wmplay
@@ -263,4 +262,4 @@ case 'tiktokwm':{
 },
 premium: false, // Hanya member premium yang dapat mengakses fitur ini
 limit: true
-}
+                       }
