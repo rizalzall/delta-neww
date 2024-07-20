@@ -6,7 +6,7 @@ exports.run = {
     switch (m.command) {
       case 'apk': {
         if (!m.text) return m.reply(func.example(m.cmd, 'pou'));
-        mecha.sendReact(m.chat, '⏱️', m.key)
+        mecha.sendReact(m.chat, '🕒', m.key)
         try {
           let res = await func.fetchJson(`https://api.maher-zubair.tech/search/apk?q=${encodeURIComponent(m.text)}`);
           if (res.status && res.result.length > 0) {
@@ -36,13 +36,14 @@ exports.run = {
         } catch (err) {
           console.error(err);
           m.reply(global.mess.error.api);
+          mecha.sendReact(m.chat, '☑️', m.key)
         }
       }
       break;
       
       case 'apkdl': {
         if (!m.text) return m.reply(func.example(m.cmd, 'com.miniclip.eightballpool'));
-        m.reply(global.mess.wait);
+        mecha.sendReact(m.chat, '🕒', m.key)
         try {
           let res = await func.fetchJson(`https://api.maher-zubair.tech/download/apk?id=${m.args[0]}`);
           
@@ -55,6 +56,7 @@ exports.run = {
         } catch (err) {
           console.error(err);
           m.reply(func.jsonFormat(err));
+          mecha.sendReact(m.chat, '☑️', m.key)
         }
       }
       break;
