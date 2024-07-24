@@ -3,25 +3,22 @@ const { fileTypeFromBuffer } = require('file-type');
 
 exports.run = {
   usage: ['mega'],
-  hidden: ['megadl'],
+  hidden: ['mgdl'],
   use: 'link mega',
   category: 'downloader',
   async: async (m, { func, mecha, command }) => {
     if (!m.text) {
       return m.reply(func.example(m.cmd, 'link'));
     }
-
+    try {
     let file;
       file = File.fromURL(m.text);
-
     m.reply(global.mess.wait);
-
-    try {
       await file.loadAttributes();
       const data = await file.downloadBuffer();
       
-      await mecha.sendMessage(m.chat, { document: data, fileName: file.name, mimetype: 'video/mp4' }, { quoted: m });
-      mecha.sendMessage(m.chat, { react: { text: `☑️`, key: m.key } });
+      await mecha.sendMedia(m.chat, data, m, { fileName: file.name })
+      await mecha.sendReact(m.chat, '✅', m.key);
     } catch (e) {
       console.error('Download Error:', e);
       m.reply('Internal Error: ' + e.message);
