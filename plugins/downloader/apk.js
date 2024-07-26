@@ -1,5 +1,6 @@
 exports.run = {
-  usage: ['apk', 'apkdl'],
+  usage: ['apk'],
+  hidden: ['apkdl'],
   use: 'nama aplikasi',
   category: 'downloader',
   async: async (m, { func, mecha }) => {
