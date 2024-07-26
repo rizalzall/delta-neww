@@ -14,7 +14,7 @@ await mecha.sendMessage(m.chat, {image: { url: foto }, caption: global.mess.ok},
 } catch (e) {
 return m.reply(global.mess.error.api);
 }
-} else m.reply(`Kirim/Reply foto dengan caption ${comand}`)
+} else m.reply(`Kirim/Reply foto dengan caption ${m.cmd}`)
 },
 premium: true,
 limit: 5
