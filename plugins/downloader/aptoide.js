@@ -4,7 +4,8 @@ download
 } = require('aptoide-scraper');
 
 exports.run = {
-usage: ['aptoide', 'aptoidedl'],
+usage: ['aptoide'],
+hidden: ['aptoidedl'],
 use: 'parameter',
 category: 'downloader',
 async: async (m, { func, mecha }) => {
@@ -59,7 +60,7 @@ document: {
 url: res.dllink
 },
 fileName: `${res.name}.apk`,
-mimetype: 'application/zip',
+mimetype: 'application/vnd.android.package-archive',
 caption
 }, {quoted: m, ephemeralExpiration: m.expiration})
 } else {
