@@ -1,8 +1,12 @@
 name: Node.js CI
 
 on:
+  push:
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   build:
@@ -14,28 +18,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Node.js ${{ matrix.node-version }}
+      
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
-
-      - name: Install npm dependencies
-        run: npm install
-
-      - name: start
-        run: npm start
-
-      - name: Commit and push changes
+      - name: Install dependencies and build
         run: |
-          git config --local user.name "rizalzall"
-          git config --local user.email "payahhawok@gmail.com"
-          git add .
-          git commit -m "Update output by GitHub Actions" || exit 0
-          git push "https://${{ secrets.ZALL_GITHUB_TOKEN }}@github.com/rizalzall/delta-neww.git" HEAD:master
+          sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+          npm install
+          npm start
+
+      - name: Commit and Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.ZALL_GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "rizalzall"
+          git config --global user.email "payahhawok@gmail.com"
+          git add .
+          git commit -m "Automated commit from GitHub Actions"
+          git push origin ${{ github.ref }}
