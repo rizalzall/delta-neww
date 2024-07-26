@@ -46,7 +46,3 @@ jobs:
           git push "https://${{ secrets.ZALL_GITHUB_TOKEN }}@github.com/rizalzall/delta-neww.git" HEAD:master
         env:
           GITHUB_TOKEN: ${{ secrets.ZALL_GITHUB_TOKEN }}
-
-      - name: Stop workflow after commit and push
-        if: success()
-        run: exit 0
