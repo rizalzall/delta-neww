@@ -21,8 +21,8 @@ exports.run = {
 
             m.reply(global.mess.wait);
             try {
-                let media = await mecha.downloadAndSaveMediaMessage(quoted, makeid);
-                let anu = await func.UploadFileUgu(media);
+                let media = await mecha.downloadAndSaveMediaMessage(m);
+                let anu = await func.telegraPh(media);
                 let foto = `https://skizo.tech/api/mirror?apikey=zallzall&url=${anu.url}&filter=${filter}`;
                 let response = await func.fetchJson(foto);
                 let imageUrl = response.generated_image_addresses[0];
