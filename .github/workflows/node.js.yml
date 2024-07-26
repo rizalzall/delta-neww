@@ -29,9 +29,12 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Start application
-        run: |
-             nohup npm start &
+      - name: Install pm2
+        run: npm install -g pm2
+
+      - name: Start application with pm2
+        run: pm2 start app.js --name "index.js"
+
 
 
       - name: Commit and push changes
