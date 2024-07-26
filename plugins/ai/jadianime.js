@@ -8,7 +8,7 @@ if (/image\/(jpe?g|png)/.test(quoted.mime)) {
 m.reply(global.mess.wait)
 try {
 let media = await mecha.downloadAndSaveMediaMessage(m)
-let anu = await func.UploadFileUgu(media);
+let anu = await func.telegraPh(media);
 let foto = `https://skizo.tech/api/toanime?apikey=zallzall&url=${anu.url}`;
 await mecha.sendMessage(m.chat, {image: { url: foto }, caption: global.mess.ok}, {quoted: m, ephemeralExpiration: m.expiration})
 } catch (e) {
