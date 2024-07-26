@@ -1,6 +1,5 @@
 exports.run = {
-usage: ['modsearch'],
-hidden: ['modapk'],
+usage: ['modsearch', 'modapk'],
 use: 'parameter',
 category: 'downloader',
 async: async (m, { func, mecha }) => {
@@ -56,7 +55,7 @@ document: {
 url: res.data.url
 },
 fileName: `${res.data.name}.apk`,
-mimetype: 'application/vnd.android.package-archive',
+mimetype: 'application/zip',
 caption
 }, {quoted: m, ephemeralExpiration: m.expiration})
 } else {
