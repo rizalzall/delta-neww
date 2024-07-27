@@ -28,14 +28,6 @@ jobs:
           sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
           npm install
 
-      - name: Prepare files for commit
-        run: |
-          # Remove node_modules from Git
-          git rm -r --cached node_modules
-          
-          # Ensure that node_modules is ignored in future commits
-          echo "node_modules/" >> .gitignore
-
       - name: Commit and Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.ZALL_GITHUB_TOKEN }}
