@@ -1,10 +1,10 @@
 name: Node.js CI
 
 on:
+  push:
+    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '0 */6 * * *'
 
 jobs:
   build:
@@ -27,7 +27,14 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
           npm install
-          npm start
+
+      - name: Prepare files for commit
+        run: |
+          # Remove node_modules from Git
+          git rm -r --cached node_modules
+          
+          # Ensure that node_modules is ignored in future commits
+          echo "node_modules/" >> .gitignore
 
       - name: Commit and Push changes
         env:
@@ -35,6 +42,8 @@ jobs:
         run: |
           git config --global user.name "rizalzall"
           git config --global user.email "payahhawok@gmail.com"
+          
+          # Add all changes, excluding those ignored in .gitignore
           git add .
           git commit -m "Automated commit from GitHub Actions"
-          git push origin ${{ github.ref }}
+          git push https://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@github.com/rizalzall/delta-neww.git master
