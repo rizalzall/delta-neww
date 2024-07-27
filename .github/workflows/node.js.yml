@@ -34,8 +34,6 @@ jobs:
         run: |
           git config --global user.name "rizalzall"
           git config --global user.email "payahhawok@gmail.com"
-          
-          # Add all changes, excluding those ignored in .gitignore
           git add .
           git commit -m "Automated commit from GitHub Actions"
           git push https://x-access-token:${{ secrets.ZALL_GITHUB_TOKEN }}@github.com/rizalzall/delta-neww.git master
