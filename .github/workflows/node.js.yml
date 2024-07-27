@@ -5,7 +5,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  
+  schedule:
+    - cron: '0 */6 * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,28 +18,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-
-      - name: Install dependencies and build
-        run: |
-          sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
-          npm install
-
-      - name: Commit and Push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.ZALL_GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "rizalzall"
-          git config --global user.email "payahhawok@gmail.com"
-          
-          # Add all changes, excluding those ignored in .gitignore
-          git add .
-          git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
-          
-          git pull origin master
-          git push -u origin master
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+      - run: npm install
+      - run: npm start
