@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 
 exports.run = {
-  usage: ['spotify', 'spotifydl'],
+  usage: ['spotify'],
+  hidden: ['spotifydl'],
   use: 'parameter',
   category: 'downloader',
   async: async (m, { func, mecha }) => {
