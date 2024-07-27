@@ -36,11 +36,8 @@ jobs:
           git config --global user.email "payahhawok@gmail.com"
           
           # Add all changes, excluding those ignored in .gitignore
-          git add --all
+          git add .
           git commit -m "Automated commit from GitHub Actions" || echo "No changes to commit"
           
-          # Set remote URL with authentication token
-          git remote set-url origin https://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@github.com/rizalzall/delta-neww.git
-          
-          # Push changes to GitHub
-          git push origin master
+          git pull origin master
+          git push -u origin master
