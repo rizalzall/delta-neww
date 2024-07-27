@@ -1,7 +1,8 @@
 const fg = require('api-dylux');
 
 exports.run = {
-usage: ['xnxx', 'xnxxdl'],
+usage: ['xnxx'],
+hidden: ['xnxxdl'],
 use: 'parameter',
 category: 'downloader',
 async: async (m, { func, mecha }) => {
