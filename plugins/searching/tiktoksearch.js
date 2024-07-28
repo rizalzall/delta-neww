@@ -1,26 +1,61 @@
 exports.run = {
-    usage: ['tiktoksearch'],
-    hidden: ['ttsearch'],
-    use: 'query',
-    category: 'searching',
-    async: async (m, { func, mecha, comand }) => {
-        if (!m.text) return m.reply(func.example(comand, 'query'));
-        
-        m.reply(global.mess.wait);
-        
-        await func.fetchJson(`https://skizo.tech/api/tiktok-search?apikey=zallzall&keywords=${encodeURIComponent(m.text)}`)
-            .then(async (res) => {
-                if (!res || res.length === 0) return m.reply('No TikTok video found for the given query.');
-                
-                const randomIndex = Math.floor(Math.random() * res.length);
-                const video = res[randomIndex]; // Select a random video from the search results
+  usage: ['tiktoks'],
+  hidden: ['gettt'],
+  use: 'query',
+  category: 'searching',
+  async: async (m, { func, mecha }) => {
+    switch (m.command) {
+      case 'tiktoks': {
+        if (!m.text) return m.reply(func.example(m.cmd, 'tobrut'));
+        mecha.sendReact(m.chat, '🕒', m.key);
+        try {
+          let res = await func.fetchJson(`https://skizo.tech/api/tiktok-search?apikey=zallzall&keywords=${encodeURIComponent(m.text)}`);
+          if (res && res.length > 0) {
+            let body = '```Result from:```' + ' `' + m.text + '`';
+            let rows = [];
+            for (let [index, data] of res.entries()) {
+              if (!data.title || !data.play) continue;
+              rows.push({
+                title: `${index + 1}. ${data.title}`,
+                id: `${m.prefix}gettt ${data.play}`
+              });
+            }
+            let sections = [{
+              title: 'Hasil Pencarian',
+              rows: rows
+            }];
+            let buttons = [
+['list', 'Click Here ⎙', sections],
+]
+mecha.sendButton(m.chat, `T I K T O K - S E A R C H`, body, 'select the list button below.', buttons, m, {
+userJid: m.sender,
+expiration: m.expiration
+})
+          } else {
+            m.reply('Tidak ada hasil yang ditemukan.');
+          }
+        } catch (err) {
+          console.error(err);
+          m.reply(`${err}`);
+        }
+      }
+      break;
 
-                const caption = `*TikTok Video*\n\nTitle: ${video.title}\nDuration: ${video.duration} seconds\nPlay Count: ${video.play_count}\nDigg Count: ${video.digg_count}\nComment Count: ${video.comment_count}\nShare Count: ${video.share_count}\nDownload Count: ${video.download_count}\n\nBy: @${video.author.nickname}`;
-
-                mecha.sendMessage(m.chat, { video: { url: video.play }, caption: caption }, { quoted: m });
-            })
-            .catch((err) => m.reply(func.jsonFormat(err)));
-    },
-    premium: true,
-    limit: true
+      case 'gettt': {
+        if (!m.text) return m.reply(func.example(m.cmd, 'tobrut'));
+        mecha.sendReact(m.chat, '🕒', m.key);
+        try {
+          let url = m.text;
+          await mecha.sendMedia(m.chat, url, m, { fileName: 'tiktok_video' });
+        } catch (err) {
+          console.error(err);
+          m.reply(`${err}`);
+          mecha.sendReact(m.chat, '✅', m.key);
+}
+}
+break
+}
+},
+premium: true, // Hanya member premium yang dapat mengakses fitur ini
+limit: 5
 }
