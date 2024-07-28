@@ -35,6 +35,6 @@ exports.run = {
             m.reply(`Kirim/Reply foto dengan caption ${comand} <nama_filter>.\nFilter yang tersedia:\n${availableFilters.join(', ')}`);
         }
     },
-    premium: true,
-    limit: 5
+    premium: false,
+    limit: true
 };
