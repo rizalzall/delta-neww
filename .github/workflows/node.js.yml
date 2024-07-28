@@ -1,8 +1,13 @@
 name: Node.js CI
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'
+  push:
+    branches: [ "master" ]
+  workflow_dispatch: # memungkinkan pemicu manual
+  workflow_run:
+    workflows: ["Node.js CI"]
+    types:
+      - completed
 
 jobs:
   build:
