@@ -7,7 +7,7 @@ exports.run = {
   	switch (m.command) {
 case 'animesearch':{
     if (!m.text) return m.reply(func.example(m.cmd, 'kageno'));
-    mecha.sendReact(m.chat, `⏱️`, m.key )
+    mecha.sendReact(m.chat, `🕒`, m.key )
     try {
       let res = await func.fetchJson(`https://skizo.tech/api/v1/search/${encodeURIComponent(m.text)}`);
       if (res.status && res.search.length > 0) {
@@ -44,7 +44,7 @@ expiration: m.expiration
   break
   case 'animedetail':{
   	    if (!m.text) return m.reply(func.example(m.cmd, 'https://skizo.tech/api/v1/detail/kage-ni-naritakute-sub-indo'));
-    mecha.sendReact(m.chat, `⏱️`, m.key )
+    mecha.sendReact(m.chat, `🕒`, m.key )
     try {
       let res = await func.fetchJson(`${m.text}`);
       if (res.status && res.episode_list.length > 0) {
@@ -94,6 +94,10 @@ expiration: m.expiration
       let res = await func.fetchJson(`${m.text}`);
       if (res.title && res.list_episode) {
         let txt = `*Detail Anime:*\n\n`;
+        txt += `Mirror Embed 1 Quality: ${res.mirror_embed1.quality}\n`;
+        for (let stream of res.mirror_embed1.straming) {
+          txt += `- Driver: ${stream.driver}\n  Link: ${stream.link}\n`;
+        }
         txt += `Mirror Embed 2 Quality: ${res.mirror_embed2.quality}\n`;
         for (let stream of res.mirror_embed2.straming) {
           txt += `- Driver: ${stream.driver}\n  Link: ${stream.link}\n`;
