@@ -7,13 +7,13 @@ exports.run = {
     category: 'ai',
     async: async (m, { func, mecha }) => {
         if (!m.text) return m.reply(func.example(m.cmd, 'halo'));
-        await mecha.sendReact(m.chat, '', m.key);
+        await mecha.sendReact(m.chat, '🕒', m.key);
         let messageId = 'BAE5' + func.makeid(8).toUpperCase() + 'SIMI';
         let sessionId = m.sender;
         try {
             let response = await chatWithElxyz(m.text, sessionId);
             await mecha.sendMessage(m.chat, { text: `${response}` }, { quoted: m, ephemeralExpiration: m.expiration, messageId: messageId });
-            await mecha.sendReact(m.chat, '', m.key);
+            await mecha.sendReact(m.chat, '✅', m.key);
         } catch (e) {
             console.error("Error during chat process:", e);
             m.reply(`${e}`)
@@ -21,14 +21,14 @@ exports.run = {
     },
     main: async (m, { func, mecha }) => {
         if (m.budy && m.quoted && m.quoted.fromMe && m.quoted.id.endsWith('SIMI') && !m.isPrefix) {
-            await mecha.sendReact(m.chat, '', m.key);
+            await mecha.sendReact(m.chat, '🕒', m.key);
             let messageId = 'BAE5' + func.makeid(8).toUpperCase() + 'SIMI';
             let sessionId = m.sender;
             try {
                 let response = await chatWithElxyz(m.budy, sessionId);
                 await mecha.sendMessage(m.chat, { text: `${response}` }, { quoted: m, ephemeralExpiration: m.expiration, messageId: messageId });
                 global.db.users[m.sender].limit -= 1;
-                await mecha.sendReact(m.chat, '', m.key);
+                await mecha.sendReact(m.chat, '✅', m.key);
             } catch (e) {
                 console.error("Error during chat process:", e);
                 m.reply(`${e}`)
