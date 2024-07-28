@@ -16,6 +16,6 @@ return m.reply(global.mess.error.api);
 }
 } else m.reply(`Kirim/Reply foto dengan caption ${m.cmd}`)
 },
-premium: true,
-limit: 5
+premium: false,
+limit: false
 }
