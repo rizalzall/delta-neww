@@ -1,11 +1,11 @@
 exports.run = {
-  usage: ['tiktoks'],
+  usage: ['tiktoksearch'],
   hidden: ['gettt'],
   use: 'query',
   category: 'searching',
   async: async (m, { func, mecha }) => {
     switch (m.command) {
-      case 'tiktoks': {
+      case 'tiktoksearch': {
         if (!m.text) return m.reply(func.example(m.cmd, 'tobrut'));
         mecha.sendReact(m.chat, '🕒', m.key);
         try {
