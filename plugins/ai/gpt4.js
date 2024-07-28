@@ -38,6 +38,7 @@ let result = await gpt4o(m.text)
 mecha.reply(m.chat, result, m, {
 expiration: m.expiration
 })
+mecha.sendReact(m.chat, '✅', m.key)
 },
 limit: true
 }
