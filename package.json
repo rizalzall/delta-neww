@@ -24,6 +24,7 @@
   "@whiskeysockets/baileys": "npm:@whiskeysockets/baileys",
   "acrcloud": "^1.4.0",
   "api-dylux": "^1.8.4",
+  "aptoide-scraper": "^1.0.1",
   "archiver": "^6.0.2",
   "awesome-phonenumber": "^2.64.0",
   "axios": "^1.6.0",
