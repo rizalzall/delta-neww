@@ -7,7 +7,7 @@
       "gender": "",
       "age": 0,
       "date": "8 Juni 2024",
-      "limit": 99935,
+      "limit": 99932,
       "balance": 10000,
       "afk": 0,
       "alasan": "",
@@ -20,7 +20,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1728794308079,
+        "user": 1730000290509,
         "premium": "PERMANENT",
         "banned": 0
       },
@@ -113,7 +113,7 @@
       "gender": "",
       "age": 0,
       "date": "8 Juni 2024",
-      "limit": 99887,
+      "limit": 99881,
       "balance": 10000,
       "afk": 0,
       "alasan": "",
@@ -126,7 +126,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1729994999088,
+        "user": 1730000815469,
         "premium": "PERMANENT",
         "banned": 0
       },
@@ -165,12 +165,12 @@
       "gender": "",
       "age": 0,
       "date": "29 Juli 2024",
-      "limit": 3,
+      "limit": 100000,
       "balance": 10000,
       "afk": 0,
       "alasan": "",
       "afkObj": {},
-      "premium": false,
+      "premium": true,
       "banned": false,
       "warning": 0,
       "pasangan": {
@@ -178,8 +178,8 @@
         "time": 0
       },
       "expired": {
-        "user": 1722827330787,
-        "premium": 0,
+        "user": 1730000644122,
+        "premium": "PERMANENT",
         "banned": 0
       },
       "game": {
@@ -208,7 +208,7 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze"
+      "role": "Bronze V"
     },
     "6282322133457@s.whatsapp.net": {
       "jid": "6282322133457@s.whatsapp.net",
@@ -230,7 +230,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1722827341189,
+        "user": 1722829619677,
         "premium": 0,
         "banned": 0
       },
@@ -260,7 +260,7 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze"
+      "role": "Bronze V"
     },
     "6283106995787@s.whatsapp.net": {
       "jid": "6283106995787@s.whatsapp.net",
@@ -312,7 +312,7 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze"
+      "role": "Bronze V"
     }
   },
   "groups": {
@@ -333,7 +333,7 @@
       "antihidetag": false,
       "antidelete": false,
       "antiedited": false,
-      "expired": 1722827341189,
+      "expired": 1722829449611,
       "sewa": {
         "status": false,
         "expired": 0
@@ -344,15 +344,15 @@
       "member": [
         {
           "jid": "6282220618853@s.whatsapp.net",
-          "lastseen": 1722218999079,
+          "lastseen": 1722224010661,
           "toxic": 0,
-          "chat": 4
+          "chat": 10
         },
         {
           "jid": "62882005015972@s.whatsapp.net",
-          "lastseen": 1722222530719,
+          "lastseen": 1722224644101,
           "toxic": 0,
-          "chat": 6
+          "chat": 9
         }
       ]
     },
@@ -399,9 +399,9 @@
     },
     "getplugin": {
       "name": "getplugin",
-      "hit": 52,
-      "hittoday": 30,
-      "lastused": 1717997630694
+      "hit": 54,
+      "hittoday": 32,
+      "lastused": 1722223763561
     },
     "setprefix": {
       "name": "setprefix",
@@ -483,15 +483,15 @@
     },
     "instagram": {
       "name": "instagram",
-      "hit": 8,
-      "hittoday": 1,
-      "lastused": 1717887588032
+      "hit": 10,
+      "hittoday": 3,
+      "lastused": 1722224644123
     },
     "addpremium": {
       "name": "addpremium",
-      "hit": 5,
-      "hittoday": 2,
-      "lastused": 1721018254802
+      "hit": 6,
+      "hittoday": 3,
+      "lastused": 1722223310168
     },
     "ping": {
       "name": "ping",
@@ -840,6 +840,30 @@
       "hit": 3,
       "hittoday": 3,
       "lastused": 1721018343820
+    },
+    "getfile": {
+      "name": "getfile",
+      "hit": 1,
+      "hittoday": 1,
+      "lastused": 1722223327558
+    },
+    "whatmusic": {
+      "name": "whatmusic",
+      "hit": 1,
+      "hittoday": 1,
+      "lastused": 1722223724636
+    },
+    "toimage": {
+      "name": "toimage",
+      "hit": 1,
+      "hittoday": 1,
+      "lastused": 1722224809511
+    },
+    "stickermeme": {
+      "name": "stickermeme",
+      "hit": 1,
+      "hittoday": 1,
+      "lastused": 1722224815470
     }
   },
   "stickercmd": {},
@@ -860,14 +884,13 @@
     "fakereply": false,
     "autolevelup": true,
     "owner": [
-      "62895415497664@s.whatsapp.net",
-      "62882003321562@s.whatsapp.net",
+      "6281333154367@s.whatsapp.net",
       "6282220618853@s.whatsapp.net"
     ],
-    "packname": "ᴄʀᴇᴀᴛᴇ ʙʏ ᴍᴇᴄʜᴀ ʙᴏᴛ\n\nᴄʀᴇᴀᴛᴇᴅ ᴀᴛ :\n+week, +date\n+time WIB\n\nsewa bot?\n+62 882-0033-21562",
-    "author": " \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "packname": "zall",
+    "author": "Delta-BOT",
     "cover": "https://telegra.ph/file/3e10aee285a1606280299.jpg",
-    "link": "https://whatsapp.com/channel/0029VaU3j0z2ER6liR0MY601",
+    "link": "https://chat.whatsapp.com/KZqLpMdtgMfA4Ji6FiHo9I",
     "gamewaktu": 60,
     "bmin": 1000,
     "bmax": 3000,
@@ -942,6 +965,7 @@
       "pepek",
       "pler",
       "pucek",
+      "tobrut",
       "puki",
       "pukimak",
       "setan",
