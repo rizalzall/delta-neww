@@ -27,7 +27,7 @@ title: 'Hasil Pencarian',
 rows: rows
 }]
 let buttons = [
-['list', 'Click Here ', sections],
+['list', 'Click Here', sections],
 ]
 mecha.sendButton(m.chat, `L I R I K - S E A R C H`, body, 'select the list button below.', buttons, m, {
 userJid: m.sender,
