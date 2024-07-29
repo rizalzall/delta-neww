@@ -7,7 +7,7 @@ async: async (m, { func, mecha }) => {
 switch (m.command) {
 case 'lirik':{
 if (!m.text) return m.reply(func.example(m.cmd, 'melukis senja'));
-mecha.sendReact(m.chat, '', m.key)
+mecha.sendReact(m.chat, '🕒', m.key)
 try {
 let res = await func.fetchJson(`https://skizo.tech/api/musiksearch?apikey=zallzall&search=${encodeURIComponent(m.text)}`);
 if (res.header.status_code && res.body.track_list.length > 0) {
@@ -44,7 +44,7 @@ m.reply(global.mess.error.api);
 break
 case 'readtrack':{
 if (!m.text) return m.reply(func.example(m.cmd, 'https://skizo.tech/read-track?'));
-mecha.sendReact(m.chat, '', m.key)
+mecha.sendReact(m.chat, '🕒', m.key)
 try {
 let data = await func.fetchJson(`https://skizo.tech/api/read-track?id=${m.text}&apikey=zallzall`) // Mengambil data dari API
         if (data.header.status_code !== 200) return m.reply('Lirik tidak ditemukan!') // Jika status tidak berhasil, balas dengan pesan error
