@@ -113,7 +113,7 @@
       "gender": "",
       "age": 0,
       "date": "8 Juni 2024",
-      "limit": 99890,
+      "limit": 99887,
       "balance": 10000,
       "afk": 0,
       "alasan": "",
@@ -126,7 +126,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1728794343819,
+        "user": 1729994999088,
         "premium": "PERMANENT",
         "banned": 0
       },
@@ -158,19 +158,19 @@
       "level": 0,
       "role": "Bronze V"
     },
-    "6283879361228@s.whatsapp.net": {
-      "jid": "6283879361228@s.whatsapp.net",
+    "62882005015972@s.whatsapp.net": {
+      "jid": "62882005015972@s.whatsapp.net",
       "register": false,
-      "name": "Bot WhatsApp",
+      "name": "U Can Call Me Dida",
       "gender": "",
       "age": 0,
-      "date": "15 Juli 2024",
-      "limit": 100999,
+      "date": "29 Juli 2024",
+      "limit": 3,
       "balance": 10000,
       "afk": 0,
       "alasan": "",
       "afkObj": {},
-      "premium": true,
+      "premium": false,
       "banned": false,
       "warning": 0,
       "pasangan": {
@@ -178,10 +178,9 @@
         "time": 0
       },
       "expired": {
-        "user": 1721612754096,
-        "premium": "PERMANENT",
-        "banned": 0,
-        "jadibot": "PERMANENT"
+        "user": 1722827330787,
+        "premium": 0,
+        "banned": 0
       },
       "game": {
         "tictactoe": 0,
@@ -209,8 +208,7 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze V",
-      "jadibot": true
+      "role": "Bronze"
     },
     "6282322133457@s.whatsapp.net": {
       "jid": "6282322133457@s.whatsapp.net",
@@ -218,7 +216,7 @@
       "name": "-",
       "gender": "",
       "age": 0,
-      "date": "15 Juli 2024",
+      "date": "29 Juli 2024",
       "limit": 15,
       "balance": 10000,
       "afk": 0,
@@ -232,7 +230,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1721612658383,
+        "user": 1722827341189,
         "premium": 0,
         "banned": 0
       },
@@ -262,15 +260,15 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze V"
+      "role": "Bronze"
     },
-    "6288983198559@s.whatsapp.net": {
-      "jid": "6288983198559@s.whatsapp.net",
+    "6283106995787@s.whatsapp.net": {
+      "jid": "6283106995787@s.whatsapp.net",
       "register": false,
-      "name": "athena hye sun",
+      "name": "-",
       "gender": "",
       "age": 0,
-      "date": "15 Juli 2024",
+      "date": "29 Juli 2024",
       "limit": 15,
       "balance": 10000,
       "afk": 0,
@@ -284,7 +282,7 @@
         "time": 0
       },
       "expired": {
-        "user": 1721616087232,
+        "user": 1722826837567,
         "premium": 0,
         "banned": 0
       },
@@ -314,221 +312,13 @@
       "lastunreg": 0,
       "exp": 0,
       "level": 0,
-      "role": "Bronze V"
-    },
-    "6283842828312@s.whatsapp.net": {
-      "jid": "6283842828312@s.whatsapp.net",
-      "register": false,
-      "name": "Dean",
-      "gender": "",
-      "age": 0,
-      "date": "15 Juli 2024",
-      "limit": 15,
-      "balance": 10000,
-      "afk": 0,
-      "alasan": "",
-      "afkObj": {},
-      "premium": false,
-      "banned": false,
-      "warning": 0,
-      "pasangan": {
-        "id": "",
-        "time": 0
-      },
-      "expired": {
-        "user": 1721618152537,
-        "premium": 0,
-        "banned": 0
-      },
-      "game": {
-        "tictactoe": 0,
-        "suit": 0,
-        "petakbom": 0,
-        "tebaklagu": 0,
-        "tebakheroml": 0,
-        "tebaklogo": 0,
-        "tebakgambar": 0,
-        "tebakkalimat": 0,
-        "tebakkata": 0,
-        "tebaklirik": 0,
-        "tebakkimia": 0,
-        "tebakbendera": 0,
-        "tebakanime": 0,
-        "kuis": 0,
-        "siapakahaku": 0,
-        "asahotak": 0,
-        "susunkata": 0,
-        "caklontong": 0,
-        "family100": 0,
-        "math": 0,
-        "casino": 0
-      },
-      "lastunreg": 0,
-      "exp": 0,
-      "level": 0,
-      "role": "Bronze V"
-    },
-    "6282229739755@s.whatsapp.net": {
-      "jid": "6282229739755@s.whatsapp.net",
-      "register": false,
-      "name": "Anno Un",
-      "gender": "",
-      "age": 0,
-      "date": "15 Juli 2024",
-      "limit": 15,
-      "balance": 10000,
-      "afk": 0,
-      "alasan": "",
-      "afkObj": {},
-      "premium": false,
-      "banned": false,
-      "warning": 0,
-      "pasangan": {
-        "id": "",
-        "time": 0
-      },
-      "expired": {
-        "user": 1721618493676,
-        "premium": 0,
-        "banned": 0
-      },
-      "game": {
-        "tictactoe": 0,
-        "suit": 0,
-        "petakbom": 0,
-        "tebaklagu": 0,
-        "tebakheroml": 0,
-        "tebaklogo": 0,
-        "tebakgambar": 0,
-        "tebakkalimat": 0,
-        "tebakkata": 0,
-        "tebaklirik": 0,
-        "tebakkimia": 0,
-        "tebakbendera": 0,
-        "tebakanime": 0,
-        "kuis": 0,
-        "siapakahaku": 0,
-        "asahotak": 0,
-        "susunkata": 0,
-        "caklontong": 0,
-        "family100": 0,
-        "math": 0,
-        "casino": 0
-      },
-      "lastunreg": 0,
-      "exp": 0,
-      "level": 0,
-      "role": "Bronze V"
-    },
-    "6285342480475@s.whatsapp.net": {
-      "jid": "6285342480475@s.whatsapp.net",
-      "register": false,
-      "name": "Entitas Asing",
-      "gender": "",
-      "age": 0,
-      "date": "15 Juli 2024",
-      "limit": 15,
-      "balance": 10000,
-      "afk": 0,
-      "alasan": "",
-      "afkObj": {},
-      "premium": false,
-      "banned": false,
-      "warning": 0,
-      "pasangan": {
-        "id": "",
-        "time": 0
-      },
-      "expired": {
-        "user": 1721618954008,
-        "premium": 0,
-        "banned": 0
-      },
-      "game": {
-        "tictactoe": 0,
-        "suit": 0,
-        "petakbom": 0,
-        "tebaklagu": 0,
-        "tebakheroml": 0,
-        "tebaklogo": 0,
-        "tebakgambar": 0,
-        "tebakkalimat": 0,
-        "tebakkata": 0,
-        "tebaklirik": 0,
-        "tebakkimia": 0,
-        "tebakbendera": 0,
-        "tebakanime": 0,
-        "kuis": 0,
-        "siapakahaku": 0,
-        "asahotak": 0,
-        "susunkata": 0,
-        "caklontong": 0,
-        "family100": 0,
-        "math": 0,
-        "casino": 0
-      },
-      "lastunreg": 0,
-      "exp": 0,
-      "level": 0,
-      "role": "Bronze V"
-    },
-    "6283104396509@s.whatsapp.net": {
-      "jid": "6283104396509@s.whatsapp.net",
-      "register": false,
-      "name": "—pz¹.lemonilov",
-      "gender": "",
-      "age": 0,
-      "date": "15 Juli 2024",
-      "limit": 15,
-      "balance": 10000,
-      "afk": 0,
-      "alasan": "",
-      "afkObj": {},
-      "premium": false,
-      "banned": false,
-      "warning": 0,
-      "pasangan": {
-        "id": "",
-        "time": 0
-      },
-      "expired": {
-        "user": 1721620127079,
-        "premium": 0,
-        "banned": 0
-      },
-      "game": {
-        "tictactoe": 0,
-        "suit": 0,
-        "petakbom": 0,
-        "tebaklagu": 0,
-        "tebakheroml": 0,
-        "tebaklogo": 0,
-        "tebakgambar": 0,
-        "tebakkalimat": 0,
-        "tebakkata": 0,
-        "tebaklirik": 0,
-        "tebakkimia": 0,
-        "tebakbendera": 0,
-        "tebakanime": 0,
-        "kuis": 0,
-        "siapakahaku": 0,
-        "asahotak": 0,
-        "susunkata": 0,
-        "caklontong": 0,
-        "family100": 0,
-        "math": 0,
-        "casino": 0
-      },
-      "lastunreg": 0,
-      "exp": 0,
-      "level": 0,
-      "role": "Bronze V"
+      "role": "Bronze"
     }
   },
   "groups": {
-    "120363294067536601@g.us": {
-      "jid": "120363294067536601@g.us",
-      "name": "GC GABUT",
+    "120363198302543617@g.us": {
+      "jid": "120363198302543617@g.us",
+      "name": "Bot",
       "tekswelcome": "Hello, +user Thank you for joining the group +group\n\nPlease intro first :\nName :\nAge :\nHome town :",
       "teksleft": "Goodbye +user",
       "welcome": true,
@@ -543,7 +333,7 @@
       "antihidetag": false,
       "antidelete": false,
       "antiedited": false,
-      "expired": 1721618493676,
+      "expired": 1722827341189,
       "sewa": {
         "status": false,
         "expired": 0
@@ -553,16 +343,22 @@
       "blacklist": [],
       "member": [
         {
-          "jid": "6282229739755@s.whatsapp.net",
-          "lastseen": 1721013693666,
+          "jid": "6282220618853@s.whatsapp.net",
+          "lastseen": 1722218999079,
           "toxic": 0,
-          "chat": 1
+          "chat": 4
+        },
+        {
+          "jid": "62882005015972@s.whatsapp.net",
+          "lastseen": 1722222530719,
+          "toxic": 0,
+          "chat": 6
         }
       ]
     },
     "6285342480475-1601438700@g.us": {
       "jid": "6285342480475-1601438700@g.us",
-      "name": "☕✰ 𝕺𝖓𝖑𝖎𝖓𝖊 𝕱𝖗𝖎𝖊𝖓𝖉𝖘 ✰☕",
+      "name": "-",
       "tekswelcome": "Hello, +user Thank you for joining the group +group\n\nPlease intro first :\nName :\nAge :\nHome town :",
       "teksleft": "Goodbye +user",
       "welcome": true,
@@ -577,7 +373,7 @@
       "antihidetag": false,
       "antidelete": false,
       "antiedited": false,
-      "expired": 1721620127079,
+      "expired": 1722826837567,
       "sewa": {
         "status": false,
         "expired": 0
@@ -585,54 +381,7 @@
       "absen": {},
       "list": [],
       "blacklist": [],
-      "member": [
-        {
-          "jid": "6285342480475@s.whatsapp.net",
-          "lastseen": 1721014153993,
-          "toxic": 0,
-          "chat": 0
-        },
-        {
-          "jid": "6283104396509@s.whatsapp.net",
-          "lastseen": 1721015327069,
-          "toxic": 0,
-          "chat": 0
-        }
-      ]
-    },
-    "120363030444365532@g.us": {
-      "jid": "120363030444365532@g.us",
-      "name": "𝙕𝘼𝙇𝙇𝙭𝘽𝙊𝙏𝙕",
-      "tekswelcome": "Hello, +user Thank you for joining the group +group\n\nPlease intro first :\nName :\nAge :\nHome town :",
-      "teksleft": "Goodbye +user",
-      "welcome": true,
-      "left": false,
-      "detect": false,
-      "mute": false,
-      "antitoxic": false,
-      "antilink": true,
-      "antivirtex": true,
-      "antibot": false,
-      "antiviewonce": false,
-      "antihidetag": false,
-      "antidelete": false,
-      "antiedited": false,
-      "expired": 1721623054800,
-      "sewa": {
-        "status": false,
-        "expired": 0
-      },
-      "absen": {},
-      "list": [],
-      "blacklist": [],
-      "member": [
-        {
-          "jid": "6281333154367@s.whatsapp.net",
-          "lastseen": 1721018254759,
-          "toxic": 0,
-          "chat": 3
-        }
-      ]
+      "member": []
     }
   },
   "statistic": {
@@ -938,15 +687,15 @@
     },
     "ytvideo": {
       "name": "ytvideo",
-      "hit": 1,
-      "hittoday": 1,
-      "lastused": 1717891112360
+      "hit": 5,
+      "hittoday": 5,
+      "lastused": 1722222530790
     },
     "ytaudio": {
       "name": "ytaudio",
-      "hit": 1,
-      "hittoday": 1,
-      "lastused": 1717891140727
+      "hit": 2,
+      "hittoday": 2,
+      "lastused": 1722218964138
     },
     "tiktokdl": {
       "name": "tiktokdl",
