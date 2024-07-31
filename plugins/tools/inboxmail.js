@@ -25,6 +25,6 @@ exports.run = {
             m.reply(`Maaf terjadi kesalahan! ${e}`);
         }
     },
-    premium: true,
-    limit: 5
+    premium: false,
+    limit: 3
 }
