@@ -882,7 +882,7 @@
     "anticall": true,
     "antispam": true,
     "fakereply": false,
-    "autolevelup": true,
+    "autolevelup": false,
     "owner": [
       "6281333154367@s.whatsapp.net",
       "6282220618853@s.whatsapp.net"
@@ -895,7 +895,7 @@
     "bmin": 1000,
     "bmax": 3000,
     "timer": 1800000,
-    "limit": 15,
+    "limit": 100,
     "hargalimit": 1000,
     "lastreset": 1717866000287,
     "ctoxic": 15,
