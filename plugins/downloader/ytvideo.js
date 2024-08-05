@@ -1,4 +1,4 @@
-const { ytmp3 } = require('../../lib/youtube');
+const yts = require('yt-search');
 const fg = require('api-dylux');
 
 exports.run = {
@@ -16,20 +16,25 @@ exports.run = {
     mecha.sendReact(m.chat, '🕒', m.key);
 
     try {
-      let data = await ytmp3(m.text);
-      let txt = `🎶 *YOUTUBE DOWNLOADER MP3*\n`;
-      txt += `\n🎵 *Title:* ${data.title}`;
-      txt += `\n📦 *Size:* ${data.size}`;
-      txt += `\n⏳ *Duration:* ${data.duration}`;
-      txt += `\n👁️ *Views:* ${data.views}${data.likes ? '\n👍 *Likes:* ' + data.likes : ''}${data.dislike ? '\n👎 *Dislike:* ' + data.dislike : ''}`;
-      txt += `\n📺 *Channel:* ${data.channel}`;
-      txt += `\n📅 *Upload Date:* ${data.uploadDate}`;
+      const videoId = m.text.match(/(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/)[1];
+      const videoInfo = await yts({ videoId });
 
-      let music = await fg.ytv(m.text);
-      if (!music.dl_url) return m.reply(mess.error.api);
+      if (!videoInfo) return m.reply('Tidak dapat menemukan informasi video.');
+
+      let data = videoInfo;
+      let txt = `🎥 *YOUTUBE DOWNLOADER MP4*\n`;
+      txt += `\n🎵 *Title:* ${data.title}`;
+      txt += `\n📦 *Size:* Tidak tersedia`;
+      txt += `\n⏳ *Duration:* ${data.timestamp}`;
+      txt += `\n👁️ *Views:* ${data.views}`;
+      txt += `\n📺 *Channel:* ${data.author.name}`;
+      txt += `\n📅 *Upload Date:* Tidak tersedia`;
+
+      let video = await fg.ytv(m.text);
+      if (!video.dl_url) return m.reply(mess.error.api);
 
       await mecha.sendMessage(m.chat, {
-        video: { url: music.dl_url },
+        video: { url: video.dl_url },
         caption: txt,
         mimetype: 'video/mp4'
       }, {
@@ -37,11 +42,4 @@ exports.run = {
         ephemeralExpiration: m.expiration
       });
       mecha.sendMessage(m.chat, { react: { text: `☑️`, key: m.key } });
-    } catch (err) {
-      mecha.reply(m.chat, "Error ytvideo: " + err, m);
-    } finally {
-      delete mecha.ytvideo[m.text];
-    }
-  },
-  limit: 3
-};
+    } catch (err)
