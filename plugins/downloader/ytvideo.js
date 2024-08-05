@@ -42,4 +42,11 @@ exports.run = {
         ephemeralExpiration: m.expiration
       });
       mecha.sendMessage(m.chat, { react: { text: `☑️`, key: m.key } });
-    } catch (err)
+    } catch (err) {
+      mecha.reply(m.chat, "Error ytvideo: " + err, m);
+    } finally {
+      delete mecha.ytvideo[m.text];
+    }
+  },
+  limit: 3
+};
