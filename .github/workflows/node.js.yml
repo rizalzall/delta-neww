@@ -2,7 +2,8 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */6 * * *'  # Atur sesuai kebutuhan Anda
+  workflow_dispatch:  # Memungkinkan pemicu manual dari tab Actions di GitHub
 
 jobs:
   build:
@@ -22,3 +23,18 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
       - run: npm install
       - run: npm start
+      - name: Check for changes
+        run: |
+          cd /home/runner/work/delta-neww/delta-neww
+          git diff --exit-code  # Memeriksa apakah ada perubahan
+        continue-on-error: true  # Jika tidak ada perubahan, langkah ini tidak gagal
+      - name: Upload database files to GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Menggunakan token dari secrets
+        run: |
+          cd /home/runner/work/delta-neww/delta-neww
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add database
+          git diff --cached --quiet || git commit -m "Update database files"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:master
