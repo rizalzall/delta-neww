@@ -7,6 +7,7 @@ exports.run = {
   async: async (m, { func, mecha, comand, text }) => {
     if (!m.text) return m.reply(func.example(m.cmd, 'hardcore'));
     if (m.text.startsWith('@62')) return m.reply('Stress ??');
+mecha.sendReact(m.chat, '🕒', m.key)
 try {
     let res = await scrapeEporner(`https://www.eporner.com/search/${encodeURIComponent(m.text)}/`);
     res = res.map((v) => `*Title:* ${v.title}\n*Views:* ${v.views}\n*Duration:* ${v.duration}\n*Rating:* ${v.rating}\n*Link:* ${v.link}`).join('\n\n°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n');
@@ -14,6 +15,7 @@ try {
 } catch (err) { 
       console.error(err); 
       m.reply(`${err}`);
+mecha.sendReact(m.chat, '✅', m.key)
 }
   },
   limit: 3
