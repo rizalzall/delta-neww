@@ -1,1 +1,101 @@
-function _0x25ef(_0x2d6751,_0x4518f6){const _0x2d7357=_0x3be9();return _0x25ef=function(_0x523850,_0x3bae98){_0x523850=_0x523850-0x6f;let _0x3be9c3=_0x2d7357[_0x523850];return _0x3be9c3;},_0x25ef(_0x2d6751,_0x4518f6);}const _0x3bf8e3=_0x25ef;function _0x3be9(){const _0x13229d=['node-fetch','https://api.github.com/repos/','message','application/json','8KtvDGi','29701980rHvWvp','6FuNkcE','constructor','8186922aMkuNr','status','from','path','1644xYbxwh','GET','json','reply','/contents/','text','(((.+)+)+)+$','28279MnygRu','base64','trim','token\x20','2044mctdCI','Gagal\x20mengambil\x20file:\x20','[TOKEN_REMOVED]','plugins/','run','content','toString','1448898Bgpqrj','6126701JSksnv','delta-neww','119545UYMAga','search','File\x20tidak\x20ditemukan:\x20'];_0x3be9=function(){return _0x13229d;};return _0x3be9();}(function(_0x164765,_0x59c2bb){const _0xb92a70=_0x25ef,_0x371374=_0x164765();while(!![]){try{const _0xa88849=-parseInt(_0xb92a70(0x87))/0x1+-parseInt(_0xb92a70(0x92))/0x2+parseInt(_0xb92a70(0x80))/0x3*(parseInt(_0xb92a70(0x8b))/0x4)+parseInt(_0xb92a70(0x71))/0x5*(parseInt(_0xb92a70(0x7a))/0x6)+-parseInt(_0xb92a70(0x6f))/0x7*(parseInt(_0xb92a70(0x78))/0x8)+-parseInt(_0xb92a70(0x7c))/0x9+parseInt(_0xb92a70(0x79))/0xa;if(_0xa88849===_0x59c2bb)break;else _0x371374['push'](_0x371374['shift']());}catch(_0x2229b8){_0x371374['push'](_0x371374['shift']());}}}(_0x3be9,0xb3cfa));const _0x3bae98=(function(){let _0x9b7b9=!![];return function(_0x4cb964,_0x1894ec){const _0x26f4a0=_0x9b7b9?function(){if(_0x1894ec){const _0x2c81bb=_0x1894ec['apply'](_0x4cb964,arguments);return _0x1894ec=null,_0x2c81bb;}}:function(){};return _0x9b7b9=![],_0x26f4a0;};}()),_0x523850=_0x3bae98(this,function(){const _0x5cce49=_0x25ef;return _0x523850['toString']()[_0x5cce49(0x72)](_0x5cce49(0x86))[_0x5cce49(0x91)]()[_0x5cce49(0x7b)](_0x523850)[_0x5cce49(0x72)](_0x5cce49(0x86));});_0x523850();const fetch=require(_0x3bf8e3(0x74)),GITHUB_TOKEN=_0x3bf8e3(0x8d),REPO_OWNER='rizalzall',REPO_NAME=_0x3bf8e3(0x70);async function getFileFromGitHub(_0x41b8ff){const _0xee8a0d=_0x3bf8e3,_0x18ff82=_0xee8a0d(0x75)+REPO_OWNER+'/'+REPO_NAME+_0xee8a0d(0x84)+_0x41b8ff,_0x516b3f=await fetch(_0x18ff82,{'method':_0xee8a0d(0x81),'headers':{'Authorization':_0xee8a0d(0x8a)+GITHUB_TOKEN,'Content-Type':_0xee8a0d(0x77)}});if(_0x516b3f['ok']){const _0x9f61de=await _0x516b3f[_0xee8a0d(0x82)](),_0x2f6d71=Buffer[_0xee8a0d(0x7e)](_0x9f61de[_0xee8a0d(0x90)],_0xee8a0d(0x88))['toString']('utf-8');return _0x2f6d71;}else{if(_0x516b3f[_0xee8a0d(0x7d)]===0x194)throw new Error(_0xee8a0d(0x73)+_0x41b8ff);else{const _0x498d4f=await _0x516b3f[_0xee8a0d(0x82)]();throw new Error(_0xee8a0d(0x8c)+_0x498d4f[_0xee8a0d(0x76)]);}}}exports[_0x3bf8e3(0x8f)]={'usage':['gg'],'use':_0x3bf8e3(0x7f),'category':'owner','async':async(_0x20ea42,{mecha:_0x77e895})=>{const _0x259a74=_0x3bf8e3;if(!_0x20ea42[_0x259a74(0x85)])return _0x20ea42['reply']('Mau\x20ambil\x20plugin\x20di\x20path\x20apa?');const _0x537285=_0x259a74(0x8e)+_0x20ea42[_0x259a74(0x85)][_0x259a74(0x89)]()+'.js';try{const _0x2d5a6f=await getFileFromGitHub(_0x537285);_0x20ea42[_0x259a74(0x83)](''+_0x2d5a6f);}catch(_0x59469c){_0x20ea42['reply'](_0x59469c['message']);}},'owner':!![]};
+const fetch = require('node-fetch');
+
+// Token GitHub dan informasi repository
+const GITHUB_TOKEN = '[TOKEN_REMOVED]'; // Ganti dengan token GitHub Anda
+const REPO_OWNER = 'rizalzall';
+const REPO_NAME = 'delta-neww';
+
+// Fungsi untuk mengambil konten file dari GitHub
+async function getFileFromGitHub(filePath) {
+    const githubApiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${filePath}`;
+
+    const response = await fetch(githubApiUrl, {
+        method: 'GET',
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        const fileContent = Buffer.from(data.content, 'base64').toString('utf-8');
+        return fileContent;
+    } else if (response.status === 404) {
+        throw new Error(`File tidak ditemukan: ${filePath}`);
+    } else {
+        const error = await response.json();
+        throw new Error(`Gagal mengambil file: ${error.message}`);
+    }
+}
+
+// Fungsi untuk mendapatkan branch default dari repository
+async function getDefaultBranch() {
+    const githubApiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
+
+    const response = await fetch(githubApiUrl, {
+        method: 'GET',
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        return data.default_branch;
+    } else {
+        const error = await response.json();
+        throw new Error(`Gagal mengambil branch default: ${error.message}`);
+    }
+}
+
+// Fungsi untuk mendapatkan semua file path di dalam direktori plugins saja
+async function getAllPluginsFilePaths() {
+    const defaultBranch = await getDefaultBranch();
+    const githubApiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${defaultBranch}?recursive=1`;
+
+    const response = await fetch(githubApiUrl, {
+        method: 'GET',
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        const pluginsFilePaths = data.tree
+            .filter(item => item.type === 'blob' && item.path.startsWith('plugins/'))
+            .map(item => item.path);
+        return pluginsFilePaths;
+    } else {
+        const error = await response.json();
+        throw new Error(`Gagal mengambil daftar file: ${error.message}`);
+    }
+}
+
+// Integrasi dengan sistem bot/command handler
+exports.run = {
+    usage: ['gg'],
+    use: 'path',
+    category: 'owner',
+    async: async (m, { mecha }) => {
+        const filePath = m.text.trim();
+
+        try {
+            if (filePath) {
+                // Jika file path diberikan, ambil konten file tersebut
+                const content = await getFileFromGitHub(`plugins/${filePath}.js`);
+                m.reply(`${content}`);
+            } else {
+                // Jika tidak ada file path yang diberikan, tampilkan semua file path di direktori plugins
+                const pluginsFilePaths = await getAllPluginsFilePaths();
+                m.reply(`ini daftar semua file di direktori plugins:\n\n${pluginsFilePaths.join('\n')}`);
+            }
+        } catch (error) {
+            m.reply(error.message);
+        }
+    },
+    owner: true
+};
