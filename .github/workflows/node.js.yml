@@ -30,7 +30,7 @@ jobs:
         continue-on-error: true  # Jika tidak ada perubahan, langkah ini tidak gagal
       - name: Upload database files to GitHub
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Menggunakan token dari secrets
+          GITHUB_TOKEN: ${{ secrets.ZALL_GITHUB_TOKEN }}  # Menggunakan token dari secrets
         run: |
           cd /home/runner/work/delta-neww/delta-neww
           git config --global user.name 'GitHub Actions'
